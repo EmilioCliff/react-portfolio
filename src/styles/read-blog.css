@@ -1,0 +1,41 @@
+.read__blog-container {
+	line-height: 1.6;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.read__blog-container p {
+	margin: 1rem 0;
+}
+
+.read__blog-container p code {
+	padding: 0 5px 2px;
+	line-height: 1.8;
+	background: #e5eff5;
+	border-radius: 3px;
+}
+
+.read__blog-container pre {
+	padding: 1em;
+	overflow-x: auto;
+	border-radius: 5px;
+	margin: 1em 0;
+}
+
+figure {
+	text-align: center;
+	margin: 1rem 0;
+	max-width: 700px;
+	margin-inline: auto;
+}
+
+figcaption {
+	font-size: 0.9rem;
+	color: #666;
+}
+
+@media (max-width: 800px) {
+	.read__blog-container {
+		width: 100vw;
+	}
+}

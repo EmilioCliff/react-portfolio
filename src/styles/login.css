@@ -1,0 +1,128 @@
+.login__container {
+	min-height: 70vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.login__container form {
+	padding: 1rem 4rem;
+	box-shadow: var(--box-shadow-small);
+	min-width: 50%;
+}
+
+.login__content h1 {
+	margin-bottom: 2rem;
+}
+
+.login__content h2 {
+	margin-bottom: 5rem;
+	text-decoration: underline;
+}
+
+.login__input-box {
+	height: 40px;
+	margin: 30px 0;
+	position: relative;
+}
+
+.login__input-box input {
+	height: 100%;
+	width: 100%;
+	padding: 5px 5px 5px 10px;
+	color: black;
+	font-size: 16px;
+	z-index: 0;
+	outline: none;
+	border: none;
+	border-bottom: 1px solid grey;
+}
+
+.login__input-box label {
+	position: absolute;
+	top: 50%;
+	left: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	transform: translateY(-50%);
+	font-size: 15px;
+	font-weight: var(--font-semi-bold);
+	background-color: transparent;
+	transition: 0.3s;
+	pointer-events: none;
+}
+
+.login__input-box input:focus ~ label,
+.login__input-box input:valid ~ label {
+	top: -10px;
+	left: 10px;
+	font-weight: var(--font-semi-bold);
+	font-size: 12px;
+	z-index: 1;
+}
+
+.login__container .btn {
+	width: 100%;
+	margin-block: 2rem;
+}
+
+.login__input-box.password {
+	position: relative;
+}
+
+.visibility {
+	width: 20px;
+	position: absolute;
+	right: 0;
+	top: 10px;
+	cursor: pointer;
+	opacity: 0.7;
+}
+
+.socialLogin {
+	margin-top: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.socialIconDiv {
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.75rem;
+	margin: 1.5rem;
+	width: 3rem;
+	height: 3rem;
+	background-color: #ffffff;
+	border-radius: 50%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+.socialIconImg {
+	width: 100%;
+}
+
+@media screen and (max-width: 430px) {
+	.login__container form {
+		padding: 1rem 2rem;
+	}
+
+	.login__content h1 {
+		margin-bottom: 0.8rem;
+	}
+
+	.login__content h2 {
+		margin-bottom: 2rem;
+	}
+
+	.login__container .btn {
+		margin-block: 1rem;
+	}
+
+	.socialLogin {
+		margin-top: 2rem;
+	}
+}
