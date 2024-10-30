@@ -4,6 +4,7 @@ import BlogsContext from "../context/BlogsContext";
 
 function Navbar() {
 	const { documentTitle } = useContext(BlogsContext);
+
 	return (
 		<div className='navbar'>
 			<div className='navbar__container'>
@@ -62,9 +63,9 @@ function Navbar() {
 						</div>
 					</ul>
 				</div>
-				<div className={`navbar__buttons ${documentTitle ? "title" : ""}`}>
+				{/* <div className={`navbar__buttons ${documentTitle ? "title" : ""}`}>
 					<div className='navbar__buttons-button'>Subscribe</div>
-				</div>
+				</div> */}
 			</div>
 		</div>
 	);
