@@ -137,7 +137,7 @@ body {
 
 /*===== SHARED CSS ===== */
 .section {
-	padding-inline: 1.5rem;
+	padding-inline: 1rem;
 	margin-block: 1.5rem;
 }
 
@@ -194,7 +194,7 @@ body {
 	position: fixed;
 	width: 2rem;
 	bottom: 1rem;
-	right: 1.5rem;
+	right: 1rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -249,7 +249,7 @@ body {
 	height: var(--header-height);
 	background-color: var(--black-color);
 	color: white;
-	padding-inline: 1.5rem;
+	padding-inline: 1rem;
 	z-index: var(--z-fixed);
 }
 
@@ -427,7 +427,7 @@ body {
 	justify-content: space-between;
 	padding-bottom: 4rem;
 	padding-top: 1.5rem;
-	padding-inline: 1.5rem;
+	padding-inline: 1rem;
 }
 
 .footer__content p:hover {
