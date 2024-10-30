@@ -7,13 +7,10 @@ import Project from "../components/Project";
 import Slider from "../components/Slider";
 import ScrollUp from "../components/ScrollUp";
 import ContactUsForm from "../components/ContactUsForm.jsx";
-import homeImage from "../assets/home__img.png";
-import meImage from "../assets/2020-08-271598537877.jpg";
-import aboutImage from "../assets/about__img.png";
+import meImage from "../assets/bg-1.png";
 import { ReactComponent as GithubIcon } from "../assets/github-fill.svg";
 import { ReactComponent as LinkedInIcon } from "../assets/linkedin-fill.svg";
 import { ReactComponent as WhatsappIcon } from "../assets/whatsapp-fill.svg";
-import { ReactComponent as InstagramIcon } from "../assets/instagram-fill.svg";
 import { skills, projects } from "../data/data.js";
 import "../styles/home.css";
 
@@ -31,70 +28,72 @@ function Home() {
 
 	return (
 		<>
-			{/* <section className='home section' id="home">
-				<div className='home__data'>
-					<h1 className='home__title'>
-						Hi, <br /> I'am <span className='home__title-color'>Emilio</span>
-						<br />
-						<ReactTyped
-							strings={[
-								"This is a typing effect!",
-								"React makes things easy.",
-								"Try adding more text.",
-							]}
-							typeSpeed={70}
-							backSpeed={50}
-							loop
-						/>
-					</h1>
-					<a href='#' className='btn'>
-						Contact
-					</a>
-				</div>
-
-				<div className='profile__socials'>
-						<a href='' className='profile__socials-icon'>
-							<GithubIcon className="profile__socials-icon_logo" />
-						</a>
-						<a href='' className='profile__socials-icon'>
-							<LinkedInIcon className="profile__socials-icon_logo" />
-						</a>
-						<a href='' className='profile__socials-icon'>
-							<img src={instagramIcon} alt='' />
-						</a> 
-						<a href='' className='profile__socials-icon'>
-							<WhatsappIcon className="profile__socials-icon_logo" />
-						</a>
-					</div>
-
-				<svg
-					className='home__blob'
-					viewBox='0 0 200 187'
-					xmlns='http://www.w3.org/2000/svg'
-					xmlnsXlink='http://www.w3.org/1999/xlink'
-				>
-					<mask id='mask0' mask-type='alpha'>
-						<path
-							d='M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
-        130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
-        97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
-        0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z'
-						/>
-					</mask>
-					<g mask='url(#mask0)'>
-						<path
-							d='M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
-      165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
-      129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
-      -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z'
-						/>
-						<image className='home__blob-img' xlinkHref={homeImage} />
-					</g>
-				</svg>
-			</section> */}
 			<section className='profile section' id='home'>
 				<div>
-					<img src={meImage} alt='' className='profile__img' />
+					{/* <img src={meImage} alt='' className='profile__img' /> */}
+					<svg
+						className='home__blob'
+						viewBox='0 0 550 591'
+						xmlns='http://www.w3.org/2000/svg'
+					>
+						<mask id='maskBlob' mask-type='alpha'>
+							<path
+								d='M263 47.1782C270.426 42.891 279.574 42.891 287 47.1782L501.157 
+      170.822C508.583 175.109 513.157 183.032 513.157 191.606V438.894C513.157 
+      447.468 508.583 455.391 501.157 459.678L287 583.322C279.574 587.609 270.426 
+      587.609 263 583.322L48.843 459.678C41.4174 455.391 36.843 447.468 36.843 
+      438.894V191.606C36.843 183.032 41.4174 175.109 48.843 170.822L263 47.1782Z'
+							/>
+						</mask>
+						<g mask='url(#maskBlob)'>
+							<path
+								d='M263 47.1782C270.426 42.891 279.574 42.891 287 47.1782L501.157 
+      170.822C508.583 175.109 513.157 183.032 513.157 191.606V438.894C513.157 
+      447.468 508.583 455.391 501.157 459.678L287 583.322C279.574 587.609 270.426 
+      587.609 263 583.322L48.843 459.678C41.4174 455.391 36.843 447.468 36.843 
+      438.894V191.606C36.843 183.032 41.4174 175.109 48.843 170.822L263 47.1782Z'
+							/>
+
+							<rect x='37' width='476' height='630' fill='url(#pattern0)' />
+						</g>
+
+						<rect x='37' width='476' height='300' fill='url(#pattern1)' />
+
+						<defs>
+							<pattern
+								id='pattern0'
+								patternContentUnits='objectBoundingBox'
+								width='1'
+								height='1'
+							>
+								<use
+									href='#imageBlob'
+									transform='matrix(0.00143057 0 0 0.00108108 0.0404062 0)'
+								/>
+							</pattern>
+
+							<pattern
+								id='pattern1'
+								patternContentUnits='objectBoundingBox'
+								width='1'
+								height='1'
+							>
+								<use
+									href='#imageBlob'
+									transform='matrix(0.00143057 0 0 0.00226984 0.0404062 0)'
+								/>
+							</pattern>
+
+							<image
+								className='home__img'
+								id='imageBlob'
+								width='640'
+								height='925'
+								href={meImage}
+								// href='https://firebasestorage.googleapis.com/v0/b/react-portfolio-fb429.appspot.com/o/home%2Fbg-1.png?alt=media&token=90604583-d3fc-4587-836a-dab19c29dafa'
+							/>
+						</defs>
+					</svg>
 				</div>
 				<div className='profile__content'>
 					<p>Hello, I'm</p>
@@ -106,6 +105,7 @@ function Home() {
 							"Fullstack Developer",
 							"Golang Gopher",
 							"Backend Developer",
+							"Technical Writer",
 						]}
 						typeSpeed={70}
 						backSpeed={50}
@@ -263,7 +263,11 @@ function Home() {
 						</a>{" "}
 						below.
 					</p>
-					<img src={aboutImage} alt='' className='about__content-img' />
+					<img
+						src='https://firebasestorage.googleapis.com/v0/b/react-portfolio-fb429.appspot.com/o/home%2Fabout__img.png?alt=media&token=3887ace9-aeb0-4c01-a877-65fb6f620366'
+						alt=''
+						className='about__content-img'
+					/>
 				</div>
 				<div className='about__skills'>
 					<h2 className='section__subtitle'>Skills</h2>
@@ -283,11 +287,17 @@ function Home() {
 								<h3>Junior Developer</h3>
 								<h4>Laini Technologis Limited, Nairobi</h4>
 								<p>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									Distinctio, delectus repudiandae magnam dolorem reprehenderit
-									nemo cum fuga facere reiciendis aspernatur aperiam nihil
-									voluptatem accusamus pariatur. Vel neque laudantium eaque
-									suscipit.
+									Currently, as a Junior Developer at Laini Technologies, I work
+									on both backend and full-stack projects, supporting the
+									development and maintenance of client websites and HR/payroll
+									management systems. I participate in transitioning PayPlus, a
+									payroll solution, from an offline system to an online
+									platform, gaining valuable experience throughout this
+									migration process. I work closely with teams across various
+									functions, contributing to API design, managing data flow, and
+									enhancing the user experience. This collaborative environment
+									allows me to continuously learn and refine my skills while
+									ensuring a seamless UI/UX across applications.
 								</p>
 							</div>
 						</div>
@@ -298,11 +308,14 @@ function Home() {
 								<h3>Licensing Intern</h3>
 								<h4>Communication Authority of Kenya, Waiyaki way</h4>
 								<p>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									Distinctio, delectus repudiandae magnam dolorem reprehenderit
-									nemo cum fuga facere reiciendis aspernatur aperiam nihil
-									voluptatem accusamus pariatur. Vel neque laudantium eaque
-									suscipit.
+									I participated in the technical evaluation of licensing
+									proposals from major telecommunications companies, gaining
+									extensive exposure to the regulatory frameworks governing the
+									industry. I initiated the learning and implementation of
+									Golang-based systems, analyzing technical documentation and
+									proposal requirements. My contributions to the development of
+									internal tools using Golang further solidified my expertise in
+									the language.
 								</p>
 							</div>
 						</div>
@@ -313,11 +326,14 @@ function Home() {
 								<h3>ICT intern</h3>
 								<h4>KPLC Stima plaza, Nairobi</h4>
 								<p>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									Distinctio, delectus repudiandae magnam dolorem reprehenderit
-									nemo cum fuga facere reiciendis aspernatur aperiam nihil
-									voluptatem accusamus pariatur. Vel neque laudantium eaque
-									suscipit.
+									I lead a team of fellow Interns in the design and development
+									of a Meeting Room Management System to modernize room booking
+									processes. I built the backend in Flask, implementing APIs for
+									user authentication, room reservations, and amenities
+									listings, and designed a database schema focused on efficient
+									room availability tracking and usage analytics. The project
+									gained traction within the department and was adopted as a
+									pilot solution.
 								</p>
 							</div>
 						</div>

@@ -21,6 +21,7 @@ const BlogsContext = createContext();
 
 export const BlogsProvider = ({ children }) => {
 	const [publishedBlogs, setPublishedBlogs] = useState([]);
+	const [categoryBlogs, setCategoryBlogs] = useState([]);
 	const [blogs, setBlogs] = useState([]);
 	const [ctxLoading, setCtxLoading] = useState(false);
 	const [lastFetchedListing, setLastFetchedListing] = useState(null);
@@ -55,6 +56,38 @@ export const BlogsProvider = ({ children }) => {
 
 		setCtxLoading(false);
 	};
+
+	const getBlogsByCategory = async (category) => {
+		setCtxLoading(true);
+		try {
+			const blogsRef = collection(db, "blogs");
+			const q = query(
+				blogsRef,
+				where("published", "==", true),
+				where("category", "==", category),
+				orderBy("createdAt", "asc")
+			);
+
+			const docsSnap = await getDocs(q);
+			let result = [];
+			docsSnap.forEach((doc) => {
+				return result.push({
+					id: doc.id,
+					data: doc.data(),
+				});
+			});
+
+			setCategoryBlogs(result);
+			setCtxLoading(false);
+
+			return true;
+		} catch (error) {
+			console.log(error);
+		}
+
+		setCtxLoading(false);
+	};
+
 	const listBlogs = async () => {
 		setCtxLoading(true);
 
@@ -84,6 +117,7 @@ export const BlogsProvider = ({ children }) => {
 
 		setCtxLoading(false);
 	};
+
 	const listMoreBlogs = async () => {
 		setCtxLoading(true);
 		try {
@@ -112,6 +146,7 @@ export const BlogsProvider = ({ children }) => {
 		}
 		setCtxLoading(false);
 	};
+
 	const deleteBlog = async (blogId) => {
 		setCtxLoading(true);
 		const blogRef = doc(db, "blogs", blogId);
@@ -119,6 +154,7 @@ export const BlogsProvider = ({ children }) => {
 		setCtxLoading(false);
 		window.location.reload();
 	};
+
 	const editBlog = async (data, blogId) => {
 		try {
 			setCtxLoading(true);
@@ -141,6 +177,7 @@ export const BlogsProvider = ({ children }) => {
 		}
 		setCtxLoading(false);
 	};
+
 	const getBlog = async (blogId) => {
 		setCtxLoading(true);
 
@@ -201,6 +238,7 @@ export const BlogsProvider = ({ children }) => {
 		<BlogsContext.Provider
 			value={{
 				blogs,
+				categoryBlogs,
 				lastFetchedListing,
 				ctxLoading,
 				publishedBlogs,
@@ -213,6 +251,7 @@ export const BlogsProvider = ({ children }) => {
 				listBlogs,
 				listMoreBlogs,
 				getPublishedBlogs,
+				getBlogsByCategory,
 				setDocumentTitle,
 			}}
 		>

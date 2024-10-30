@@ -1,7 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import BlogsContext from "../context/BlogsContext.js";
 import { useLocation } from "react-router";
-import { Helmet } from "react-helmet";
 import Prism from "../assets/prism.js";
 import { useDocumentTitle } from "../hooks/useDocumentTitle.js";
 import "../styles/prism.css";
@@ -43,8 +42,10 @@ function ReadBlog() {
 	useEffect(() => {
 		window.addEventListener("scroll", handleScroll);
 		Prism.highlightAll();
+		document.title = blog.title;
 
 		return () => {
+			document.title = "Emilio Cliff - Software Engineer";
 			setDocumentTitle(false);
 			if (document.querySelector(".nav-blog__title-cont")) {
 				document.querySelector(".nav-blog__title-cont").style.display = "none";
@@ -56,9 +57,6 @@ function ReadBlog() {
 
 	return (
 		<div className='read__blog-container section'>
-			<Helmet>
-				<title>{blog.title}</title>
-			</Helmet>
 			<div dangerouslySetInnerHTML={{ __html: blog.content }}></div>
 		</div>
 	);

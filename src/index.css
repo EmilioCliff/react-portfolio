@@ -9,7 +9,7 @@
 	--box-shadow-big: 4px 8px 12px rgba(69, 53, 193, 0.5);
 
 	/*===== Colors =====*/
-	--first-color: #4535c1;
+	--first-color: hsl(247, 57%, 48%);
 	--first-color-alt: #36c2ce;
 	--first-color-dark: #003049;
 	--secondary-color: rgb(223, 223, 32);

@@ -1,10 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import BlogsContext from "../context/BlogsContext";
-import useLocalStorage from "../hooks/useLocalStorage";
 import { Link, useLocation } from "react-router-dom";
 import Blog from "./Blog";
 import { toast } from "react-toastify";
-import { ReactComponent as ArrowRightIcon } from "../assets/arrow-right-line.svg";
 import { useTitleSlug } from "../hooks/useTitleSlug";
 
 function Footer() {
@@ -32,9 +30,6 @@ function Footer() {
 			}
 
 			const blogCategory = blog.category.toLowerCase();
-			console.log(blogCategory);
-			console.log(categories[0]);
-			console.log(categories[blogCategory]);
 
 			const prevIndex = currentBlogIndex > 0 ? currentBlogIndex - 1 : null;
 			const nextIndex =
@@ -88,6 +83,9 @@ function Footer() {
 								to={`/blogs/category/${titleToSlug(
 									blog.category.toLowerCase()
 								)}`}
+								state={{
+									category: blog.category,
+								}}
 							>
 								{blog.category}
 							</Link>

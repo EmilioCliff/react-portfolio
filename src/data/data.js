@@ -1,105 +1,122 @@
 import reactLogo from "../assets/react-logo.png";
-import inventoryThumbnail from "../assets/inventorySystem.png";
+import golangLogo from "../assets/golang-logo.png";
+import pythonLogo from "../assets/python-logo.png";
+import html5Logo from "../assets/html5-logo.png";
+import cssLogo from "../assets/css-logo.png";
+import javascriptLogo from "../assets/javascript-logo.png";
+import flaskLogo from "../assets/flask-logo.png";
+import postgresSQLLogo from "../assets/postgresql-logo.png";
 
 export const skills = [
 	{
-		img: reactLogo,
-		name: "react",
+		img: golangLogo,
+		name: "Golang",
+	},
+	{
+		img: pythonLogo,
+		name: "Python",
+	},
+	{
+		img: flaskLogo,
+		name: "Flask",
+	},
+	{
+		img: postgresSQLLogo,
+		name: "PostgreSQL",
 	},
 	{
 		img: reactLogo,
-		name: "golang",
+		name: "React JS",
 	},
 	{
-		img: reactLogo,
-		name: "postgres",
+		img: html5Logo,
+		name: "HTML",
 	},
 	{
-		img: reactLogo,
-		name: "javascript",
+		img: cssLogo,
+		name: "CSS",
 	},
 	{
-		img: reactLogo,
-		name: "html",
-	},
-	{
-		img: reactLogo,
-		name: "css",
+		img: javascriptLogo,
+		name: "Javascript",
 	},
 ];
 
 export const projects = [
 	{
-		img: inventoryThumbnail,
+		img: "https://firebasestorage.googleapis.com/v0/b/react-portfolio-fb429.appspot.com/o/home%2FinventorySystem.png?alt=media&token=67713c33-f905-4bda-832a-2f23aa27a9b0",
 		name: "Inventory System",
 		description:
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, reiciendis. Tenetur laudantium fugiat magnam iure hic aliquid soluta consequatur, inventore eum quam repudiandae dolorem laboriosam iusto ullam nihil ipsam? Enim.",
+			"Utilizing Python, Flask, SQLAlchemy, Bootstrap, HTML, CSS, and JavaScript, I developed a dynamic club management solution. This transformative project streamlines operations, replacing manual record-keeping with an intuitive, visually appealing digital platform.",
 		actions: {
-			github: "https://github.com/EmilioCliff?tab=repositories",
-			liveDemo: "https://www.youtube.com/watch?v=27JtRAI3QO8&t=2020s",
+			github: "https://github.com/EmilioCliff/stock-management-system",
+			videoDemo: "https://youtu.be/ez4a6alwvbY",
 		},
 	},
 	{
-		img: inventoryThumbnail,
-		name: "Inventory System",
+		img: "https://firebasestorage.googleapis.com/v0/b/react-portfolio-fb429.appspot.com/o/home%2Fpayment-polling.png?alt=media&token=2a645112-aad9-4d39-a3ff-22e67a84fba0",
+		name: "Payment Polling Service",
 		description:
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, reiciendis. Tenetur laudantium fugiat magnam iure hic aliquid soluta consequatur, inventore eum quam repudiandae dolorem laboriosam iusto ullam nihil ipsam? Enim.",
+			"The Payment Polling Service repository is a backend project built with a microservices architecture, using Go for the services, gRPC for communication, and RabbitMQ as the message broker. The system includes key services: Authentication, Gateway, and Payments, each serving specific purposes like user registration, authentication, and handling transactions. It integrates with the Payd API and utilizes Docker for containerization, while Testcontainers supports integration testing. This project was developed as part of a backend assessment​",
 		actions: {
-			videoDemo: "https://www.youtube.com/watch?v=ldwlOzRvYOU&t=32s",
+			github: "https://github.com/EmilioCliff/payment-polling-service",
 		},
 	},
 	{
-		img: inventoryThumbnail,
-		name: "Inventory System",
+		img: "https://firebasestorage.googleapis.com/v0/b/react-portfolio-fb429.appspot.com/o/home%2Fdistribution-management.png?alt=media&token=1fb084ea-11b3-4044-bc2b-3ba555801dd1",
+		name: "Pharmaceutical Distribution Management System",
 		description:
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, reiciendis. Tenetur laudantium fugiat magnam iure hic aliquid soluta consequatur, inventore eum quam repudiandae dolorem laboriosam iusto ullam nihil ipsam? Enim.",
+			"A distribution management system powered by Golang (backend), Python Flask (frontend), PostgreSQL (database), and Docker (deployment on Railways). Leveraged Redis for background processing, JWT for authentication, and integrated Safaricom Daraja API for seamless payments. This solution optimizes inventory tracking, transaction management, and payment processing for pharmaceutical distributors and sales personnel with well documented reports.",
 		actions: {
-			github: "https://github.com/EmilioCliff?tab=repositories",
-			liveDemo: "https://www.youtube.com/watch?v=27JtRAI3QO8&t=2020s",
+			videoDemo: "https://youtu.be/Y5Xl81zUBy8",
+			github: "https://github.com/EmilioCliff/inventory-system",
 		},
 	},
 	{
-		img: inventoryThumbnail,
-		name: "Inventory System",
+		img: "https://firebasestorage.googleapis.com/v0/b/react-portfolio-fb429.appspot.com/o/home%2FandySafaris.png?alt=media&token=f5258fef-e203-4cf4-a1f9-66802916b76f",
+		name: "Andy Safaris Kenya",
 		description:
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, reiciendis. Tenetur laudantium fugiat magnam iure hic aliquid soluta consequatur, inventore eum quam repudiandae dolorem laboriosam iusto ullam nihil ipsam? Enim.",
+			"The site features a user-friendly interface built to showcase tour packages, facilitate bookings, and provide detailed information about safari experiences. Using React for the front end and integrating responsive design elements, the website ensures seamless navigation across devices, enhancing user engagement and business visibility.",
 		actions: {
-			github: "https://github.com/EmilioCliff?tab=repositories",
-			videoDemo: "https://www.youtube.com/watch?v=ldwlOzRvYOU&t=32s",
-			liveDemo: "https://www.youtube.com/watch?v=27JtRAI3QO8&t=2020s",
+			liveDemo: "https://andysafaris.com/",
 		},
 	},
 	{
-		img: inventoryThumbnail,
-		name: "Inventory System",
+		img: "https://firebasestorage.googleapis.com/v0/b/react-portfolio-fb429.appspot.com/o/home%2FcollageCLI.png?alt=media&token=16091794-f4da-4cfe-af3e-a5f12312793d",
+		name: "Collage CLI",
 		description:
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, reiciendis. Tenetur laudantium fugiat magnam iure hic aliquid soluta consequatur, inventore eum quam repudiandae dolorem laboriosam iusto ullam nihil ipsam? Enim.",
+			"This command-line interface (CLI) tool is designed for managing student, courses and semesters in a collage/institution records efficiently. Built with the power of Go, the Cobra library, the PromptUI and sqlite as our database, it provides a user-friendly way to handle various student management tasks directly from your terminal. 🚀",
 		actions: {
-			github: "https://github.com/EmilioCliff?tab=repositories",
-			videoDemo: "https://www.youtube.com/watch?v=ldwlOzRvYOU&t=32s",
-			liveDemo: "https://www.youtube.com/watch?v=27JtRAI3QO8&t=2020s",
+			github: "https://github.com/EmilioCliff/collage-cli",
 		},
 	},
 	{
-		img: inventoryThumbnail,
-		name: "Inventory System",
+		img: "https://firebasestorage.googleapis.com/v0/b/react-portfolio-fb429.appspot.com/o/home%2FhouseMarketPlace.png?alt=media&token=43fde060-7f3c-4dc4-b3e5-686fa6d0972d",
+		name: "House Market Place",
 		description:
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, reiciendis. Tenetur laudantium fugiat magnam iure hic aliquid soluta consequatur, inventore eum quam repudiandae dolorem laboriosam iusto ullam nihil ipsam? Enim.",
+			"The React House Project is a web app built with React, Tailwind CSS, and Firebase, enabling users to create accounts and manage property listings for sale or rent. With Firebase for authentication and data storage, it offers secure, real-time updates and a clean, responsive design, making property management easy and accessible.",
 		actions: {
-			github: "https://github.com/EmilioCliff?tab=repositories",
-			videoDemo: "https://www.youtube.com/watch?v=ldwlOzRvYOU&t=32s",
-			liveDemo: "https://www.youtube.com/watch?v=27JtRAI3QO8&t=2020s",
+			github:
+				"https://github.com/EmilioCliff/learn-react/tree/main/house-market-place",
+			liveDemo: "https://learn-react-house-project.vercel.app/",
 		},
 	},
 	{
-		img: inventoryThumbnail,
-		name: "Inventory System",
+		img: "https://firebasestorage.googleapis.com/v0/b/react-portfolio-fb429.appspot.com/o/home%2FlainiTech.png?alt=media&token=13873829-8eb2-4e78-8908-df17a6b7e206",
+		name: "LainiTech",
 		description:
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, reiciendis. Tenetur laudantium fugiat magnam iure hic aliquid soluta consequatur, inventore eum quam repudiandae dolorem laboriosam iusto ullam nihil ipsam? Enim.",
+			"The LainiTech project is a prototype homepage developed as an intern task, aiming to pitch a new website design concept to the company. Built using HTML, CSS, and JavaScript, this single-page mockup was crafted to present a clean, professional look that aligns with Laini Technologies' brand, providing the company with a visual guide for a potential full-scale website redesign.",
 		actions: {
-			github: "https://github.com/EmilioCliff?tab=repositories",
-			videoDemo: "https://www.youtube.com/watch?v=ldwlOzRvYOU&t=32s",
-			liveDemo: "https://www.youtube.com/watch?v=27JtRAI3QO8&t=2020s",
+			liveDemo: "https://laini-tech.vercel.app/",
+		},
+	},
+	{
+		img: "https://firebasestorage.googleapis.com/v0/b/react-portfolio-fb429.appspot.com/o/home%2Fensafo.png?alt=media&token=17ba494c-6177-4213-90d8-88eacd30d11c",
+		name: "Ensafo",
+		description:
+			"Ensafo is a project built with HTML, CSS, and JavaScript, designed to offer an informative and interactive user experience about ensafo ltd. The site showcases a polished layout with smooth navigation, visually engaging elements, and responsive design, providing a user-friendly interface that effectively communicates its content and purpose.",
+		actions: {
+			liveDemo: "https://ensafo.vercel.app/",
 		},
 	},
 ];

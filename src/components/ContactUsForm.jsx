@@ -58,7 +58,10 @@ function ContactUsForm() {
 				<div className='contact__container'>
 					<div className='contact__content'>
 						<h2 className='section__subtitle'>Let's Get In Touch</h2>
-						<img src={contactImage} alt='' />
+						<img
+							src='https://firebasestorage.googleapis.com/v0/b/react-portfolio-fb429.appspot.com/o/home%2Fcontact__img.jpg?alt=media&token=3e9e1e7d-a018-4d07-bde8-4c8395c46225'
+							alt=''
+						/>
 						<p>Connect with me:</p>
 						<div className='contact__socials'>
 							<a href='' className='contact__socials-icon'>

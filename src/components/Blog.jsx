@@ -1,7 +1,6 @@
 import React from "react";
 import { useTitleSlug } from "../hooks/useTitleSlug";
 import { Link } from "react-router-dom";
-import userProfile from "../assets/about__img.png";
 
 function Blog({ blog, currentBlogIndex, categories, slider = false }) {
 	const { titleToSlug } = useTitleSlug();
@@ -44,7 +43,10 @@ function Blog({ blog, currentBlogIndex, categories, slider = false }) {
 							<h2 className='l-blog__content-title'>{blog.title}</h2>
 							<p className='l-blog__content-description'>{blog.description}</p>
 							<div className='l-blog__content-blog_info'>
-								<img src={userProfile} alt='' />
+								<img
+									src='https://firebasestorage.googleapis.com/v0/b/react-portfolio-fb429.appspot.com/o/home%2Fabout__img.png?alt=media&token=3887ace9-aeb0-4c01-a877-65fb6f620366'
+									alt=''
+								/>
 								<div className='l-blog__content-blog_info-des'>
 									<p className='l-blog__content-blog_info-name'>Emilio Cliff</p>
 									<p className='l-blog__content-blog_info-date'>

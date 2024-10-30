@@ -8,7 +8,14 @@ function Project({ project }) {
 			<p>{project.description}</p>
 			<div className='project_btns'>
 				{Object.keys(project.actions).map((key) => (
-					<a href={project.actions[key]} className='btn' key={key}>
+					<a
+						href={project.actions[key]}
+						target='_blank'
+						rel='noopener noreferrer'
+						aria-label='GitHub Profile'
+						className='btn'
+						key={key}
+					>
 						{key === "github"
 							? "GitHub"
 							: key === "videoDemo"
