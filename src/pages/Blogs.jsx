@@ -21,10 +21,6 @@ const BlogLayout = () => {
 
 	const blogElements = [];
 
-	if (ctxLoading) {
-		return <Spinner />;
-	}
-
 	const categoryMapBuild = {};
 
 	for (let index = publishedBlogs.length - 1; index >= 0; index--) {
@@ -76,6 +72,10 @@ const BlogLayout = () => {
 				</div>
 			);
 		}
+	}
+
+	if (ctxLoading) {
+		return <Spinner />;
 	}
 
 	return <div className='blog-container section'>{blogElements}</div>;

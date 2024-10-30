@@ -7,8 +7,13 @@ import { toast } from "react-toastify";
 import "../styles/blogs.css";
 
 const Categories = () => {
-	const { categoryBlogs, getBlogsByCategory, ctxLoading } =
-		useContext(BlogsContext);
+	const {
+		categoryBlogs,
+		publishedBlogs,
+		getBlogsByCategory,
+		getPublishedBlogs,
+		ctxLoading,
+	} = useContext(BlogsContext);
 	const location = useLocation();
 	const { category } = location.state;
 
@@ -23,18 +28,22 @@ const Categories = () => {
 				}
 			});
 		}
+
+		if (publishedBlogs.length === 0) {
+			getPublishedBlogs().then((value) => {
+				if (!value) {
+					toast.error("error getting blogs");
+				}
+			});
+		}
 	}, []);
 
 	const blogElements = [];
 
-	if (ctxLoading) {
-		return <Spinner />;
-	}
-
 	const categoryMapBuild = {};
 
-	for (let index = categoryBlogs.length - 1; index >= 0; index--) {
-		const blog = categoryBlogs[index];
+	for (let index = publishedBlogs.length - 1; index >= 0; index--) {
+		const blog = publishedBlogs[index];
 		const category = blog.data.category.toLowerCase();
 
 		if (!categoryMapBuild[category]) {
@@ -82,6 +91,10 @@ const Categories = () => {
 				</div>
 			);
 		}
+	}
+
+	if (ctxLoading) {
+		return <Spinner />;
 	}
 
 	return (

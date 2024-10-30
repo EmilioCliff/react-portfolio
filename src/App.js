@@ -12,6 +12,7 @@ import ReadBlog from "./components/ReadBlog";
 import CreateBlog from "./pages/CreateBlog";
 import EditBlog from "./pages/EditBlog";
 import Login from "./pages/Login";
+import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
@@ -47,6 +48,7 @@ function App() {
 								<Route path='/admin/blogs/:blogId' element={<EditBlog />} />
 							</Route>
 							<Route path='/login' element={<Login />} />
+							<Route path='*' element={<NotFound />} />
 						</Routes>
 					</div>
 					<Footer />
