@@ -4,6 +4,24 @@
 	margin: 0 auto;
 }
 
+.read__blog-container .l-blog__content-title {
+	margin-bottom: 2rem;
+	margin-top: -1rem;
+	border-bottom: 1px solid rgb(197, 189, 189);
+	padding-bottom: 1.5rem;
+}
+
+.read__blog-container-img {
+	display: flex;
+	margin-inline: -3rem;
+}
+
+.read__blog-container img:nth-child(1) {
+	max-height: 500px;
+	object-fit: cover;
+	margin-bottom: 4rem;
+}
+
 .read__blog-container p {
 	margin: 1rem 0;
 }

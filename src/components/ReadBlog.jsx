@@ -57,6 +57,11 @@ function ReadBlog() {
 
 	return (
 		<div className='read__blog-container section'>
+			<p className='l-blog__content-category'>{blog.category}</p>
+			<h1 className='l-blog__content-title'>{blog.title}</h1>
+			<div className='read__blog-container-img'>
+				<img src={blog.coverImage} alt='' />
+			</div>
 			<div dangerouslySetInnerHTML={{ __html: blog.content }}></div>
 		</div>
 	);

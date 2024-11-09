@@ -7,7 +7,8 @@ import Project from "../components/Project";
 import Slider from "../components/Slider";
 import ScrollUp from "../components/ScrollUp";
 import ContactUsForm from "../components/ContactUsForm.jsx";
-import meImage from "../assets/bg-1.png";
+// import meImage from "../assets/bg-1.png";
+import meImage from "../assets/WhatsApp_Image_2024-11-09_at_17.24.45-removebg-preview.png";
 import { ReactComponent as GithubIcon } from "../assets/github-fill.svg";
 import { ReactComponent as LinkedInIcon } from "../assets/linkedin-fill.svg";
 import { ReactComponent as WhatsappIcon } from "../assets/whatsapp-fill.svg";
@@ -112,7 +113,7 @@ function Home() {
 						loop
 					/>
 					<div className='profile_btns'>
-						<a href='/cv.pdf' download='My_CV.pdf' className='btn'>
+						<a href='/emilio.pdf' download='emilio.pdf' className='btn'>
 							Download CV
 						</a>
 						<a href='#contact' className='btn'>
@@ -137,15 +138,10 @@ function Home() {
 				<h2 className='section__subtitle'>Who am I?</h2>
 				<div className='about__content'>
 					<p className='about__content-description'>
-						I am a <span>Backend Developer</span> specializing in{" "}
-						<strong>Golang and Python</strong>, with a strong foundation in
-						system architecture and API development. I am also a{" "}
-						<span>Technical Writer</span> with 2-3 years of experience sharing
-						knowledge and insights about backend development and system design.
-						<br />
-						<br />
-						Over the last <strong>2 years</strong>, I have built a solid
-						foundation in the technology industry while pursuing my{" "}
+						I'm a <span>Backend Developer</span> specializing in{" "}
+						<strong>Golang and Python</strong>, with a strong background in
+						system architecture, API development, and microservices with over{" "}
+						<strong>2 years</strong> of experience. While pursuing my{" "}
 						<a
 							href='https://discover.jkuat.ac.ke/course-of-the-week-b-sc-telecommunication-and-information-engineering/'
 							target='_blank'
@@ -156,8 +152,7 @@ function Home() {
 								Telecommunications and Information Engineering degree at JKUAT
 							</span>
 						</a>
-						. My journey has been marked by continuous learning and practical
-						application, starting from my transformative{" "}
+						, I discovered my passion for backend development during an{" "}
 						<a
 							href='https://www.kplc.co.ke/'
 							target='_blank'
@@ -166,66 +161,30 @@ function Home() {
 						>
 							<span>internship at Kenya Power Limited Company (KPLC)</span>
 						</a>
-						, where I first discovered my passion for coding. At KPLC, I
-						collaborated with a team of interns to create a{" "}
-						<span>Meeting Room Management System (Flask)</span>, solving the
-						tedious traditional booking process through a secretary. <br />{" "}
-						<br /> What sets my journey apart is my progression from Python to
-						Golang and my deep dive into microservices architecture . After my
-						initial success at KPLC, I embarked on a structured learning journey
-						through comprehensive courses like{" "}
+						, where I helped create a
+						<span> Meeting Room Management System with Flask</span>,
+						streamlining traditional processes.
+						<br />
+						<br />A key moment came at the{" "}
 						<a
-							href='https://www.udemy.com/course/100-days-of-code/?utm_source=adwords&utm_medium=udemyads&utm_campaign=Search_DSA_Alpha_Prof_la.EN_cc.ROW-English&campaigntype=Search&portfolio=ROW-English&language=EN&product=Course&test=&audience=DSA&topic=Python&priority=Alpha&utm_content=deal4584&utm_term=_._ag_162511578924_._ad_696197165262_._kw__._de_c_._dm__._pl__._ti_dsa-1705455366924_._li_9073682_._pd__._&matchtype=&gad_source=1&gclid=Cj0KCQjwj4K5BhDYARIsAD1Ly2pqcCecFsGx-jE46HVa_tW07H4GhmGRuG7N-XXWHMNWryYid-UVLnAaApTXEALw_wcB'
+							href='https://www.ca.go.ke/'
 							target='_blank'
 							rel='noopener noreferrer'
-							aria-label='Python Pro Bootcamp'
+							aria-label='CAK Home Page'
 						>
-							{" "}
-							<span>"100 Days of Code: Complete Python Pro Bootcamp"</span>
+							<span>Communications Authority of Kenya (CAK)</span>
 						</a>
-						. Graduating from this program gave me the confidence to{" "}
-						<strong>start freelancing</strong>, where I worked on numerous
-						projects, enhancing my understanding of how to build and deploy
-						functional, scalable systems.
-						<br /> <br /> My next milestone was an{" "}
-						<a href=''>
-							<span>
-								internship at the Communications Authority of Kenya (CAK)
-							</span>
-						</a>
-						, where I was exposed to the{" "}
-						<span>corporate technology landscape</span>, particularly in
-						licensing and proposal analysis. This experience introduced me to{" "}
-						<span>Golang</span>, sparking a passion for its simplicity and power
-						in backend development. Pursuing this interest, I completed the
-						<a
-							href='https://www.udemy.com/course/backend-master-class-golang-postgresql-kubernetes/?couponCode=2021PM25'
-							target='_blank'
-							rel='noopener noreferrer'
-							aria-label='Backend Masterclass Pro Bootcamp'
-						>
-							<span>
-								"Backend Masterclass [Golang + Postgres + Kubernetes + gRPC]"
-							</span>
-						</a>
-						course, which transformed my approach to backend engineering and
-						opened doors to building complex microservices architectures. These
-						weren’t just courses –{" "}
-						<span>
-							they were stepping stones that shaped my approach to backend
-							development.
-						</span>{" "}
-						<br /> <br /> My professional experience spans across{" "}
-						<span>significant organizations in Kenya’s tech landscape.</span>{" "}
-						From <strong>KPLC’s ICT department</strong> to the{" "}
-						<strong>Communications Authority of Kenya (CAK) </strong>
-						and now at <strong>Laini Technologies</strong>, I’ve had the
-						opportunity to work on diverse projects that impact thousands of
-						users. At Laini Technologies, I’m part of the team{" "}
-						<span>revolutionizing HR and payroll systems in Kenya</span>,
-						building robust solutions that bridge the gap between traditional
-						and modern business processes.
-						<br /> <br /> Currently at{" "}
+						, where I was introduced to{" "}
+						<span>Golang and the world of microservices</span>. Fascinated by
+						Golang's simplicity and power, I deepened my expertise through a
+						comprehensive backend course, mastering{" "}
+						<strong>Golang, PostgreSQL, Kubernetes, and gRPC.</strong>
+						<br />
+						<br />
+						My journey evolved from Python to Golang, culminating in advanced
+						courses and freelancing projects that strengthened my expertise in
+						scalable systems. This knowledge has proven invaluable in my current
+						role at{" "}
 						<a
 							href='https://lainitech.com/'
 							target='_blank'
@@ -234,26 +193,17 @@ function Home() {
 						>
 							<span>Laini Technologies</span>
 						</a>
-						, I’m working on modernizing payment and HR systems, while
-						continuously <span>exploring new technologies</span> and{" "}
-						<span>sharing my knowledge through technical writing.</span>{" "}
-						Teaching and sharing what I know has become a core part of my
-						journey. My articles focus on{" "}
-						<span>
-							backend development best practices, system architecture,
-						</span>{" "}
-						and{" "}
-						<span>
-							practical implementations of modern development concepts
-						</span>
-						. I’m particularly proud of my contribution to{" "}
-						<strong>
-							transforming the PayPlus system from an offline solution to a
-							modern, online platform.
-						</strong>{" "}
+						, where I'm part of a team revolutionizing{" "}
+						<span>HR and payroll systems</span> in Kenya where I contribute in
+						modernizing the PayPlus system into an online platform.
 						<br />
 						<br />
-						Check out some of my{" "}
+						As a <span>Technical Writer</span>, I share insights on backend best
+						practices and system design, making complex concepts accessible to
+						the tech community.
+						<br />
+						<br />
+						Explore my{" "}
 						<a href='#projects'>
 							<span>recent projects</span>
 						</a>{" "}
@@ -261,7 +211,15 @@ function Home() {
 						<a href='#blogs'>
 							<span>technical articles</span>
 						</a>{" "}
-						below.
+						below. I also write on{" "}
+						<a
+							href='https://medium.com/@emiliocliff'
+							target='_blank'
+							rel='noopener noreferrer'
+							aria-label='Medium Profile'
+						>
+							<span>Medium</span>
+						</a>
 					</p>
 					<img
 						src='https://firebasestorage.googleapis.com/v0/b/react-portfolio-fb429.appspot.com/o/home%2Fabout__img.png?alt=media&token=3887ace9-aeb0-4c01-a877-65fb6f620366'

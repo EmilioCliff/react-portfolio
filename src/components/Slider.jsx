@@ -31,10 +31,10 @@ function Slider({ blogs }) {
 			autoplay={{ delay: 5000 }}
 			breakpoints={{
 				992: {
-					slidesPerView: 2,
+					slidesPerView: blogs.lenght === 1 ? 1 : 2,
 				},
 				1200: {
-					slidesPerView: 3,
+					slidesPerView: blogs.lenght === 1 ? 1 : 3,
 				},
 			}}
 		>
