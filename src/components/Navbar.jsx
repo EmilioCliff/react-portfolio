@@ -16,7 +16,7 @@ function Navbar() {
 								className='navbar__links-logo'
 								style={{ fontSize: "1.25rem" }}
 							>
-								{/* EC */}
+								EC
 							</a>
 						</li>
 						<div
