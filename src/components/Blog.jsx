@@ -3,7 +3,7 @@ import { useTitleSlug } from "../hooks/useTitleSlug";
 import { Link } from "react-router-dom";
 
 function Blog({ blog, currentBlogIndex, categories, slider = false }) {
-	const { titleToSlug } = useTitleSlug();
+	const { titleToSlug, slugToTitle } = useTitleSlug();
 
 	return (
 		<>
@@ -36,6 +36,7 @@ function Blog({ blog, currentBlogIndex, categories, slider = false }) {
 							currentBlogIndex: currentBlogIndex,
 							categories: categories,
 						}}
+						id={titleToSlug(blog.title)}
 					>
 						<img src={blog.coverImage} className='l-blog__img' alt='' />
 						<div className='l-blog__content'>

@@ -1,4 +1,5 @@
 import React, { useEffect, useContext } from "react";
+import { useSearchParams } from "react-router-dom";
 import BlogsContext from "../context/BlogsContext.js";
 import Blog from "../components/Blog";
 import Spinner from "../components/Spinner";
@@ -8,6 +9,8 @@ import "../styles/blogs.css";
 const BlogLayout = () => {
 	const { getPublishedBlogs, publishedBlogs, ctxLoading } =
 		useContext(BlogsContext);
+	const [searchParams] = useSearchParams();
+	const blogId = searchParams.get("blogId");
 
 	useEffect(() => {
 		if (publishedBlogs.length === 0) {
@@ -17,7 +20,17 @@ const BlogLayout = () => {
 				}
 			});
 		}
-	}, []);
+
+		if (blogId) {
+			const interval = setInterval(() => {
+				const blogElement = document.getElementById(blogId);
+				if (blogElement) {
+					blogElement.click();
+					clearInterval(interval);
+				}
+			}, 100);
+		}
+	}, [blogId]);
 
 	const blogElements = [];
 

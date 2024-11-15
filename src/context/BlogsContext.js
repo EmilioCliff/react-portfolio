@@ -198,6 +198,32 @@ export const BlogsProvider = ({ children }) => {
 		setCtxLoading(false);
 	};
 
+	const getBlogByTitle = async (title) => {
+		setCtxLoading(true);
+		try {
+			const blogsRef = collection(db, "blogs");
+			const q = query(blogsRef, where("title", "==", title));
+
+			const querySnapshot = await getDocs(q);
+
+			if (!querySnapshot.empty) {
+				const blogDoc = querySnapshot.docs[0];
+				const blogData = blogDoc.data();
+
+				console.log("Document data:", blogData);
+				return blogData;
+			} else {
+				console.log("No such document!");
+				return null;
+			}
+		} catch (error) {
+			console.error("Error fetching document:", error);
+			return null;
+		} finally {
+			setCtxLoading(false);
+		}
+	};
+
 	const createBlog = async (data) => {
 		setCtxLoading(true);
 
@@ -253,6 +279,7 @@ export const BlogsProvider = ({ children }) => {
 				getPublishedBlogs,
 				getBlogsByCategory,
 				setDocumentTitle,
+				getBlogByTitle,
 			}}
 		>
 			{children}
