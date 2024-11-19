@@ -121,13 +121,28 @@ function Home() {
 						</a>
 					</div>
 					<div className='profile__socials'>
-						<a href='' className='profile__socials-icon'>
+						<a
+							href='https://github.com/EmilioCliff'
+							target='_blank'
+							rel='noopener noreferrer'
+							className='profile__socials-icon'
+						>
 							<GithubIcon className='profile__socials-icon_logo' />
 						</a>
-						<a href='' className='profile__socials-icon'>
+						<a
+							href='https://www.linkedin.com/in/emilio-cliff/'
+							target='_blank'
+							rel='noopener noreferrer'
+							className='profile__socials-icon'
+						>
 							<LinkedInIcon className='profile__socials-icon_logo' />
 						</a>
-						<a href='' className='profile__socials-icon'>
+						<a
+							href='https://wa.me/254718750145'
+							target='_blank'
+							rel='noopener noreferrer'
+							className='profile__socials-icon'
+						>
 							<WhatsappIcon className='profile__socials-icon_logo' />
 						</a>
 					</div>

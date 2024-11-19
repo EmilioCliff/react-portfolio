@@ -64,13 +64,28 @@ function ContactUsForm() {
 						/>
 						<p>Connect with me:</p>
 						<div className='contact__socials'>
-							<a href='' className='contact__socials-icon'>
+							<a
+								href='https://github.com/EmilioCliff'
+								target='_blank'
+								rel='noopener noreferrer'
+								className='contact__socials-icon'
+							>
 								<GithubIcon className='contact__socials-icon__comp' />
 							</a>
-							<a href='' className='contact__socials-icon'>
+							<a
+								href='https://www.linkedin.com/in/emilio-cliff/'
+								target='_blank'
+								rel='noopener noreferrer'
+								className='contact__socials-icon'
+							>
 								<LinkedInIcon className='contact__socials-icon__comp' />
 							</a>
-							<a href='' className='contact__socials-icon'>
+							<a
+								href='https://wa.me/254718750145'
+								target='_blank'
+								rel='noopener noreferrer'
+								className='contact__socials-icon'
+							>
 								<WhatsappIcon className='contact__socials-icon__comp' />
 							</a>
 						</div>
