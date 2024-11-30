@@ -103,7 +103,7 @@ export const projects = [
 	},
 	{
 		img: "https://firebasestorage.googleapis.com/v0/b/react-portfolio-fb429.appspot.com/o/home%2FlainiTech.png?alt=media&token=13873829-8eb2-4e78-8908-df17a6b7e206",
-		name: "LainiTech",
+		name: "LainiTech Landing Page",
 		description:
 			"The LainiTech project is a prototype homepage developed as an intern task, aiming to pitch a new website design concept to the company. Built using HTML, CSS, and JavaScript, this single-page mockup was crafted to present a clean, professional look that aligns with Laini Technologies' brand, providing the company with a visual guide for a potential full-scale website redesign.",
 		actions: {
