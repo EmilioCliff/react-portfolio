@@ -23,7 +23,7 @@ function Blog({ blog, currentBlogIndex, categories, slider = false }) {
 							}}
 							to={`/blogs/${titleToSlug(blog.title)}`}
 						>
-							Read More Link
+							Read More
 						</Link>
 					</div>
 				</div>
