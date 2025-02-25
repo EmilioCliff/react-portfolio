@@ -39,7 +39,7 @@
 .read__blog-container img:nth-child(1) {
 	max-height: 500px;
 	object-fit: cover;
-	margin-bottom: 4rem;
+	margin-bottom: 2rem;
 }
 
 .read__blog-container p {
