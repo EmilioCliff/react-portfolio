@@ -1,9 +1,9 @@
-import React, { useContext, useEffect, useState } from "react";
-import BlogsContext from "../context/BlogsContext";
-import { Link, useLocation } from "react-router-dom";
-import Blog from "./Blog";
-import { toast } from "react-toastify";
-import { useTitleSlug } from "../hooks/useTitleSlug";
+import React, { useContext, useEffect, useState } from 'react';
+import BlogsContext from '../context/BlogsContext';
+import { Link, useLocation } from 'react-router-dom';
+import Blog from './Blog';
+import { toast } from 'react-toastify';
+import { useTitleSlug } from '../hooks/useTitleSlug';
 
 function Footer() {
 	const { publishedBlogs, getPublishedBlogs } = useContext(BlogsContext);
@@ -20,46 +20,49 @@ function Footer() {
 	} = location.state || {};
 
 	useEffect(() => {
-		if (location.pathname.startsWith("/blogs/") && blog) {
+		if (location.pathname.startsWith('/blogs/') && blog) {
 			if (publishedBlogs.length === 0) {
 				getPublishedBlogs().then((value) => {
 					if (!value) {
-						toast.error("error getting blogs");
+						toast.error('error getting blogs');
 					}
 				});
 			}
 
 			const blogCategory = blog.category.toLowerCase();
 
-			const prevIndex = currentBlogIndex > 0 ? currentBlogIndex - 1 : null;
+			const prevIndex =
+				currentBlogIndex > 0 ? currentBlogIndex - 1 : null;
 			const nextIndex =
 				currentBlogIndex < publishedBlogs.length - 1
 					? currentBlogIndex + 1
 					: null;
 
-			const prevBlog = prevIndex !== null ? publishedBlogs[prevIndex] : null;
-			const nextBlog = nextIndex !== null ? publishedBlogs[nextIndex] : null;
+			const prevBlog =
+				prevIndex !== null ? publishedBlogs[prevIndex] : null;
+			const nextBlog =
+				nextIndex !== null ? publishedBlogs[nextIndex] : null;
 
 			if (nextBlog) {
 				setFooterNextBlog(
-					<div className='post-card-small'>
+					<div className="post-card-small">
 						<Blog
 							blog={nextBlog.data}
 							currentBlogIndex={nextIndex}
 							categories={categories}
 						/>
-					</div>
+					</div>,
 				);
 			}
 			if (prevBlog) {
 				setFooterPrevBlog(
-					<div className='post-card-small'>
+					<div className="post-card-small">
 						<Blog
 							blog={prevBlog.data}
 							currentBlogIndex={prevIndex}
 							categories={categories}
 						/>
-					</div>
+					</div>,
 				);
 			}
 
@@ -67,21 +70,22 @@ function Footer() {
 				const filteredCategories = categories[blogCategory]
 					.filter(
 						(relatedBlog) =>
-							relatedBlog.title.toLowerCase() !== blog.title.toLowerCase()
+							relatedBlog.title.toLowerCase() !==
+							blog.title.toLowerCase(),
 					)
 					.slice(0, 3);
 
 				setRelatedBlogs(
 					<div
-						className='footer__more-read__categories post-card-small'
-						style={{ padding: ".8rem 1rem" }}
+						className="footer__more-read__categories post-card-small"
+						style={{ padding: '.8rem 1rem' }}
 					>
-						<p style={{ marginBottom: "1rem", opacity: 1 }}>
-							<span>MORE IN</span>{" "}
+						<p style={{ marginBottom: '1rem', opacity: 1 }}>
+							<span>MORE IN</span>{' '}
 							<Link
-								style={{ fontWeight: "700" }}
+								style={{ fontWeight: '700' }}
 								to={`/blogs/category/${titleToSlug(
-									blog.category.toLowerCase()
+									blog.category.toLowerCase(),
 								)}`}
 								state={{
 									category: blog.category,
@@ -90,21 +94,27 @@ function Footer() {
 								{blog.category}
 							</Link>
 						</p>
-						<ul className=''>
+						<ul className="">
 							{filteredCategories.map((categoryBlog, index) => (
-								<li style={{ marginBottom: "1.5rem" }} key={index}>
+								<li
+									style={{ marginBottom: '1.5rem' }}
+									key={index}
+								>
 									<Link
-										to={`/blogs/${titleToSlug(categoryBlog.title)}`}
+										to={`/blogs/${titleToSlug(
+											categoryBlog.title,
+										)}`}
 										state={{
 											blog: categoryBlog,
-											currentBlogIndex: categoryBlog.index,
+											currentBlogIndex:
+												categoryBlog.index,
 											categories: categories,
 										}}
 									>
 										{categoryBlog.title}
 									</Link>
 									<p>
-										{formatDate(categoryBlog.createdAt)} -{" "}
+										{formatDate(categoryBlog.createdAt)} -{' '}
 										{categoryBlog.readingTime} min read
 									</p>
 								</li>
@@ -113,15 +123,16 @@ function Footer() {
 						{categories[blogCategory].length > 3 && (
 							<Link
 								to={`/blogs/category/${titleToSlug(
-									blog.category.toLowerCase()
+									blog.category.toLowerCase(),
 								)}`}
 							>
-								<p className='btn'>
-									See all {categories[blogCategory].length} posts &#8594;
+								<p className="btn">
+									See all {categories[blogCategory].length}{' '}
+									posts &#8594;
 								</p>
 							</Link>
 						)}
-					</div>
+					</div>,
 				);
 			}
 		}
@@ -134,26 +145,26 @@ function Footer() {
 	}, [location.pathname, publishedBlogs, categories, blog]);
 
 	return (
-		<div className='footer section' style={{ marginBottom: "0" }}>
-			<div className='footer__container'>
-				<div className='footer__more-read'>
+		<div className="footer section" style={{ marginBottom: '0' }}>
+			<div className="footer__container">
+				<div className="footer__more-read">
 					{relatedBlogs}
 					{footerNextBlog}
 					{footerPrevBlog}
 				</div>
-				<div className='footer__content'>
-					<p>emiliocliff &copy; 2024</p>
+				<div className="footer__content">
+					<p>emiliocliff &copy; {new Date().getFullYear()}</p>
 					<div>
-						<Link className='hover' to={"/blogs"}>
+						<Link className="hover" to={'/'}>
 							Latest Posts
 						</Link>
 						&middot;
 						<a
-							href='https://github.com/EmilioCliff'
-							className='hover'
-							target='_blank'
-							rel='noopener noreferrer'
-							aria-label='GitHub Profile'
+							href="https://github.com/EmilioCliff"
+							className="hover"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="GitHub Profile"
 						>
 							Github
 						</a>
@@ -169,25 +180,26 @@ export default Footer;
 function formatDate(timestamp) {
 	let date;
 
-	if (timestamp && typeof timestamp.toDate === "function") {
+	if (timestamp && typeof timestamp.toDate === 'function') {
 		date = timestamp.toDate();
 	} else if (
-		typeof timestamp === "object" &&
+		typeof timestamp === 'object' &&
 		timestamp.seconds &&
 		timestamp.nanoseconds
 	) {
 		date = new Date(
-			timestamp.seconds * 1000 + Math.floor(timestamp.nanoseconds / 1000000)
+			timestamp.seconds * 1000 +
+				Math.floor(timestamp.nanoseconds / 1000000),
 		);
-	} else if (typeof timestamp === "string" || typeof timestamp === "number") {
+	} else if (typeof timestamp === 'string' || typeof timestamp === 'number') {
 		date = new Date(timestamp);
 	} else {
-		throw new Error("Invalid timestamp provided");
+		throw new Error('Invalid timestamp provided');
 	}
 
-	const day = String(date.getDate()).padStart(2, "0");
+	const day = String(date.getDate()).padStart(2, '0');
 	const month = date
-		.toLocaleString("default", { month: "short" })
+		.toLocaleString('default', { month: 'short' })
 		.toUpperCase();
 	const year = date.getFullYear();
 

@@ -1,0 +1,118 @@
+.about-container {
+	margin-top: 1rem;
+	padding-inline: 6rem;
+}
+
+@media screen and (max-width: 768px) {
+	.about-container {
+		padding-inline: 1.5rem;
+	}
+}
+
+.about-container h1 {
+	font-size: 3rem;
+	font-family: var(--secondary-style-alt);
+	/* margin-bottom: 0.5rem; */
+}
+
+.about-container hr {
+	border: none;
+	border-top: 1px solid #ccc;
+	margin-block: 0.5rem 2rem;
+}
+
+.about-content {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+}
+
+.about-image-section {
+	flex: 1;
+	min-width: 280px;
+	text-align: center;
+}
+
+.about-image {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-bottom: 1rem;
+	margin-inline: auto;
+}
+
+.subtitle {
+	font-size: 1rem;
+	color: #aaa;
+}
+
+.company {
+	font-size: 0.9rem;
+	color: #888;
+	margin-bottom: 1rem;
+}
+
+.social-icons {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	font-size: 1.5rem;
+}
+
+.social-icons a {
+	fill: #333;
+	/* transition: all 0.2s ease; */
+	width: 38px;
+}
+
+.social-icons a:nth-child(3) {
+	width: 46px;
+}
+
+.social-icons a:hover {
+	fill: #7e22ce;
+}
+
+.about-text-section {
+	flex: 2;
+	min-width: 300px;
+}
+
+.greeting-text {
+	font-size: 2.5rem;
+	font-weight: 800;
+	line-height: 60px;
+	letter-spacing: -0.015em;
+	background: linear-gradient(to right, #7e22ce, #9333ea);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	color: transparent;
+}
+
+@media (min-width: 768px) {
+	.greeting-text {
+		font-size: 4rem;
+		line-height: 86px;
+	}
+}
+
+.about-text-section p span {
+	font-weight: 600;
+	color: var(--first-color);
+}
+
+.about-text-section p {
+	margin-bottom: 1rem;
+	line-height: 1.6;
+}
+
+.about-text-section ul {
+	list-style-type: disc;
+	padding-left: 1.5rem;
+}
+
+.about-text-section ul li::marker {
+	color: #b4b0b0;
+}

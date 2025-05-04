@@ -9,6 +9,7 @@
 		"@testing-library/user-event": "^13.5.0",
 		"@tinymce/tinymce-react": "^5.1.1",
 		"firebase": "^10.14.1",
+		"lucide-react": "^0.507.0",
 		"prismjs": "^1.29.0",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",

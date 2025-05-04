@@ -3,9 +3,71 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	overflow: hidden;
-	margin-block: -2rem -3rem;
+	margin-top: 19.4rem;
+	/* margin-block: -2rem -3rem; */
 	min-height: 80vh;
+	padding-inline: 6rem;
 }
+
+.hero-banner {
+	position: absolute;
+	top: 4.4rem;
+	left: 0;
+	right: 0;
+	height: 15rem;
+	margin-inline: -2rem;
+	background-color: #090a0b;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 1rem;
+}
+
+.hero-banner h1 {
+	font-size: 3rem;
+	margin: 0.5rem 0;
+}
+
+.hero-banner h2 {
+	font-size: 1.25rem;
+	font-weight: 400;
+}
+
+@media (min-width: 768px) {
+	.hero-banner h1 {
+		font-size: 4rem;
+	}
+
+	.hero-banner h2 {
+		font-size: 1.5rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.blog-container {
+		padding-inline: 0;
+		margin-top: 13rem;
+	}
+	.hero-banner {
+		height: auto;
+		padding: 2rem 0.5rem;
+	}
+
+	.hero-banner h1 {
+		font-size: 2.5rem;
+	}
+
+	.hero-banner h2 {
+		font-size: 1rem;
+	}
+}
+/* 
+@media screen and (max-width: 768px) {
+	
+} */
 
 .post-card,
 .post-card-small,
@@ -16,6 +78,7 @@
 	width: 100%;
 	margin: 0 0 40px;
 	padding: 0 20px 40px;
+
 	border-bottom: 1px solid rgb(197, 189, 189);
 }
 
