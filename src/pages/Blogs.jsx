@@ -96,10 +96,13 @@ const BlogLayout = () => {
 		<div>
 			{/* <Navbar /> */}
 			<div className="hero-banner">
-				<h1>Emilio Cliff</h1>
-				<h2>
-					A developer’s journal of tools, techniques, and trade-offs
-				</h2>
+				<div>
+					<h1>Emilio Cliff</h1>
+					<h2>
+						A developer’s journal of tools, techniques, and
+						trade-offs
+					</h2>
+				</div>
 			</div>
 			<div className="blog-container section">{blogElements}</div>
 		</div>
