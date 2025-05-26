@@ -1,5 +1,5 @@
-import React, { createContext, useState } from "react";
-import { db } from "../firebase.config.js";
+import React, { createContext, useState } from 'react';
+import { db } from '../firebase.config.js';
 import {
 	doc,
 	serverTimestamp,
@@ -14,8 +14,8 @@ import {
 	startAfter,
 	collection,
 	addDoc,
-} from "firebase/firestore";
-import { toast } from "react-toastify";
+} from 'firebase/firestore';
+import { toast } from 'react-toastify';
 
 const BlogsContext = createContext();
 
@@ -30,11 +30,11 @@ export const BlogsProvider = ({ children }) => {
 	const getPublishedBlogs = async () => {
 		setCtxLoading(true);
 		try {
-			const blogsRef = collection(db, "blogs");
+			const blogsRef = collection(db, 'blogs');
 			const q = query(
 				blogsRef,
-				where("published", "==", true),
-				orderBy("createdAt", "asc")
+				where('published', '==', true),
+				orderBy('createdAt', 'asc'),
 			);
 
 			const docsSnap = await getDocs(q);
@@ -60,12 +60,12 @@ export const BlogsProvider = ({ children }) => {
 	const getBlogsByCategory = async (category) => {
 		setCtxLoading(true);
 		try {
-			const blogsRef = collection(db, "blogs");
+			const blogsRef = collection(db, 'blogs');
 			const q = query(
 				blogsRef,
-				where("published", "==", true),
-				where("category", "==", category),
-				orderBy("createdAt", "asc")
+				where('published', '==', true),
+				where('category', '==', category),
+				orderBy('createdAt', 'asc'),
 			);
 
 			const docsSnap = await getDocs(q);
@@ -92,8 +92,8 @@ export const BlogsProvider = ({ children }) => {
 		setCtxLoading(true);
 
 		try {
-			const blogsRef = collection(db, "blogs");
-			const q = query(blogsRef, orderBy("createdAt", "desc"), limit(10));
+			const blogsRef = collection(db, 'blogs');
+			const q = query(blogsRef, orderBy('createdAt', 'desc'), limit(10));
 
 			const docSnaps = await getDocs(q);
 
@@ -121,12 +121,12 @@ export const BlogsProvider = ({ children }) => {
 	const listMoreBlogs = async () => {
 		setCtxLoading(true);
 		try {
-			const blogsRef = collection(db, "blogs");
+			const blogsRef = collection(db, 'blogs');
 			const q = query(
 				blogsRef,
-				orderBy("createdAt", "desc"),
+				orderBy('createdAt', 'desc'),
 				limit(10),
-				startAfter(lastFetchedListing)
+				startAfter(lastFetchedListing),
 			);
 			const docSnap = await getDocs(q);
 			setLastFetchedListing(docSnap.docs[docSnap.docs.length - 1]);
@@ -149,7 +149,7 @@ export const BlogsProvider = ({ children }) => {
 
 	const deleteBlog = async (blogId) => {
 		setCtxLoading(true);
-		const blogRef = doc(db, "blogs", blogId);
+		const blogRef = doc(db, 'blogs', blogId);
 		const deleted = await deleteDoc(blogRef);
 		setCtxLoading(false);
 		window.location.reload();
@@ -159,7 +159,7 @@ export const BlogsProvider = ({ children }) => {
 		try {
 			setCtxLoading(true);
 
-			const docRef = doc(db, "blogs", blogId);
+			const docRef = doc(db, 'blogs', blogId);
 			const result = await updateDoc(docRef, {
 				title: data.title,
 				description: data.description,
@@ -173,7 +173,7 @@ export const BlogsProvider = ({ children }) => {
 			setCtxLoading(false);
 			return true;
 		} catch (error) {
-			toast.error("failed editing blog");
+			toast.error('failed editing blog');
 		}
 		setCtxLoading(false);
 	};
@@ -181,7 +181,7 @@ export const BlogsProvider = ({ children }) => {
 	const getBlog = async (blogId) => {
 		setCtxLoading(true);
 
-		const docRef = doc(db, "blogs", blogId);
+		const docRef = doc(db, 'blogs', blogId);
 		const docSnap = await getDoc(docRef);
 
 		if (docSnap.exists()) {
@@ -192,7 +192,7 @@ export const BlogsProvider = ({ children }) => {
 				data: docSnap.data(),
 			};
 		} else {
-			toast.error("Blog doesnot exists");
+			toast.error('Blog doesnot exists');
 		}
 
 		setCtxLoading(false);
@@ -201,23 +201,21 @@ export const BlogsProvider = ({ children }) => {
 	const getBlogByTitle = async (title) => {
 		setCtxLoading(true);
 		try {
-			const blogsRef = collection(db, "blogs");
-			const q = query(blogsRef, where("title", "==", title));
-
+			const blogsRef = collection(db, 'blogs');
+			const q = query(blogsRef, where('title', '==', title));
 			const querySnapshot = await getDocs(q);
-
 			if (!querySnapshot.empty) {
 				const blogDoc = querySnapshot.docs[0];
 				const blogData = blogDoc.data();
 
-				console.log("Document data:", blogData);
+				console.log('Document data:', blogData);
 				return blogData;
 			} else {
-				console.log("No such document!");
+				console.log('No such document!');
 				return null;
 			}
 		} catch (error) {
-			console.error("Error fetching document:", error);
+			console.error('Error fetching document:', error);
 			return null;
 		} finally {
 			setCtxLoading(false);
@@ -232,12 +230,12 @@ export const BlogsProvider = ({ children }) => {
 			data.updatedAt = serverTimestamp();
 			data.published = false;
 
-			const docRef = await addDoc(collection(db, "blogs"), data);
+			const docRef = await addDoc(collection(db, 'blogs'), data);
 
 			setCtxLoading(false);
 			return true;
 		} catch (error) {
-			toast.error("error creating blog");
+			toast.error('error creating blog');
 		}
 
 		setCtxLoading(false);
@@ -247,14 +245,14 @@ export const BlogsProvider = ({ children }) => {
 		try {
 			setCtxLoading(true);
 
-			const blogRef = doc(db, "blogs", blogId);
+			const blogRef = doc(db, 'blogs', blogId);
 			const updated = await updateDoc(blogRef, {
 				published: true,
 			});
 
 			window.location.reload();
 		} catch (error) {
-			toast.error("error publishing doc");
+			toast.error('error publishing doc');
 		}
 
 		setCtxLoading(false);
