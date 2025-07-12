@@ -34,7 +34,7 @@ function ReadBlog() {
 			}
 		}
 
-		if (titleToSlug(blog.title) !== blogId) {
+		if (blog && blogId && titleToSlug(blog.title) !== blogId) {
 			const foundBlog = publishedBlogs.find(
 				(publishedBlog) => titleToSlug(publishedBlog.data.title) === blogId
 			);
