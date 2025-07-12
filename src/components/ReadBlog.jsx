@@ -34,6 +34,18 @@ function ReadBlog() {
 			}
 		}
 
+		if (titleToSlug(blog.title) !== blogId) {
+			const foundBlog = publishedBlogs.find(
+				(publishedBlog) => titleToSlug(publishedBlog.data.title) === blogId
+			);
+			if (foundBlog) {
+				setBlog(foundBlog.data);
+			} else {
+				toast.error('Blog not found');
+				navigate(`/`);
+			}
+		}
+
 		window.addEventListener('scroll', handleScroll);
 		Prism.highlightAll();
 
