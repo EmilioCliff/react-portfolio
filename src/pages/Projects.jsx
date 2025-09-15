@@ -3,6 +3,17 @@ import '../styles/project.css';
 
 const projectsData = [
 	{
+		id: 13,
+		title: 'Hack-A-Milli',
+		description:
+			'KeNIC Hack-a-Milli is a comprehensive full-stack platform developed for the Kenya Network Information Centre (KeNIC) hackathon. It features interconnected services including a React-based admin portal, React Native mobile app, Go-based backend services with PostgreSQL database, and a secure gateway with JWT authentication and Casbin authorization. The platform supports domain management, user administration, content management, and learning management systems.',
+		imageUrl:
+			'https://firebasestorage.googleapis.com/v0/b/react-portfolio-fb429.appspot.com/o/projects%2Fhack-a-milli.png?alt=media&token=57899aa3-3563-45bd-938b-cc2c4887d0c6',
+		category: 'Fullstack',
+		link: 'https://hack-a-milli-kamb.vercel.app',
+		tools: ['Go', 'React', 'ReactNative'],
+	},
+	{
 		id: 1,
 		title: 'Kokomed Finance',
 		description:
