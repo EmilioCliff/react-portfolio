@@ -1,9 +1,17 @@
 import React, { useRef, useState } from "react";
+import {
+	getStorage,
+	ref,
+	uploadBytes,
+	getDownloadURL,
+} from "firebase/storage";
 import { Editor } from "@tinymce/tinymce-react";
+import Spinner from "./Spinner.jsx";
 import "../styles/prism.css";
 import "../assets/prism.js";
 
 function BlogForm({ initialData = {}, submitHandler }) {
+	const [uploadingImage, setUploadingImage] = useState(false);
 	const [formData, setFormData] = useState({
 		title: initialData?.data?.title || "",
 		description: initialData?.data?.description || "",
@@ -22,10 +30,52 @@ function BlogForm({ initialData = {}, submitHandler }) {
 		}));
 	};
 
-	const onSubmit = (e) => {
+	const onSubmit = async (e) => {
 		e.preventDefault();
 
-		submitHandler(formData);
+		setUploadingImage(true);
+		const storage = getStorage();
+		const content = editorRef.current.getContent();
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(content, "text/html");
+
+		const imageElements = Array.from(doc.querySelectorAll("img"));
+
+		// Loop over all base64 images
+		for (const img of imageElements) {
+			const src = img.getAttribute("src");
+			if (src?.startsWith("data:image")) {
+				// Convert base64 to blob
+				const res = await fetch(src);
+				const blob = await res.blob();
+				const filename = `editor-images/${Date.now()}-${Math.random()
+					.toString(36)
+					.slice(2)}.png`;
+				const storageRef = ref(storage, filename);
+
+				await uploadBytes(storageRef, blob);
+				const downloadURL = await getDownloadURL(storageRef);
+
+				// Replace base64 with Firebase URL
+				img.setAttribute("src", downloadURL);
+			}
+		}
+
+		// Get cleaned final HTML content
+		const finalContent = doc.body.innerHTML;
+
+		// Calculate reading time
+		const time = calculateReadingTime(finalContent);
+
+		// Update state and submit
+		const finalFormData = {
+			...formData,
+			content: finalContent,
+			readingTime: time,
+		};
+		setUploadingImage(false);
+
+		submitHandler(finalFormData);
 	};
 
 	// Calculate reading time
@@ -59,6 +109,9 @@ function BlogForm({ initialData = {}, submitHandler }) {
 	};
 
 	// const useDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+	if (uploadingImage) {
+		return <Spinner />;
+	}
 
 	return (
 		<>
@@ -157,6 +210,21 @@ function BlogForm({ initialData = {}, submitHandler }) {
 								});
 							}
 						},
+						// images_upload_handler: async (blobInfo, success, failure) => {
+						// 	try {
+						// 	const file = blobInfo.blob();
+						// 	const filename = `editor-images/${Date.now()}-${file.name}`;
+						// 	const storage = getStorage();
+						// 	const storageRef = ref(storage, filename);
+
+						// 	await uploadBytes(storageRef, file);
+						// 	const downloadURL = await getDownloadURL(storageRef);
+						// 	success(downloadURL);
+						// 	} catch (err) {
+						// 	console.error("Upload failed", err);
+						// 	failure("Upload failed");
+						// 	}
+						// },
 						codesample_global_prismjs: true,
 						codesample_languages: [
 							{ text: "HTML/XML", value: "markup" },
