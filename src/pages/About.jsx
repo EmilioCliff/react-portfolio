@@ -63,7 +63,7 @@ function About() {
 				<div className="about-text-section">
 					<p>
 						<span>Emilio Limo Cliff</span> is a self-taught
-						mid-level engineer with just over <span>3 years</span>{' '}
+						mid-level engineer with just over <span>4 years</span>{' '}
 						of real work experience. He enjoys building tools and
 						solving real-world problems with code. He has experience
 						working on systems in payments, finance, payrolls and
